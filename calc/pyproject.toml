@@ -1,0 +1,27 @@
+[project]
+name = "calculator"
+version = "0.1.0"
+description = "Python CLI Calculator with custom safe parser"
+readme = "README.md"
+authors = [
+    {name = "Gemini CLI Agent", email = "agent@gemini-cli.local"}
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+calc = "calculator.cli:run_repl"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=4.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--strict-markers"
+
+[tool.setuptools.packages.find]
+where = ["src"]
